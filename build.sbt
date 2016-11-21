@@ -78,6 +78,7 @@ lazy val kafkaStreams = (project in file("kafka-streams"))
   .settings(commonLibrarySettings)
   .settings(releaseSettings: _*)
   .settings(libraryDependencies ++= Seq(
-    "org.apache.kafka" % "kafka-streams" % kafkaVersion exclude(slf4jLog4jOrg, slf4jLog4jArtifact)
+    "org.apache.kafka" % "kafka-streams" % kafkaVersion exclude(slf4jLog4jOrg, slf4jLog4jArtifact),
+    "org.json4s" %% "json4s-native" % "3.5.0" % Test
   ))
   .dependsOn(embeddedKafka)
